@@ -19,7 +19,7 @@
         "colab_type": "text"
       },
       "source": [
-        "<a href=\"https://colab.research.google.com/github/Rahuljha-cell/Learning-AI-ML/blob/main/Regression%20Model%20Selection/Decision_Tree_Regression_Template.ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+        "<a href=\"https://colab.research.google.com/github/Rahuljha-cell/Learning-AI-ML/blob/main/Regression%20Model%20Selection\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
       ]
     },
     {
@@ -28,7 +28,7 @@
         "id": "FB7mg-9WUSAn"
       },
       "source": [
-        "# Decision Tree Regression"
+        "# Multiple Linear Regression"
       ]
     },
     {
@@ -43,12 +43,12 @@
     {
       "cell_type": "code",
       "source": [
-        "import pandas as pd\n",
         "import numpy as np\n",
+        "import pandas as pd\n",
         "import matplotlib.pyplot as plt"
       ],
       "metadata": {
-        "id": "ZYhnPttOXITc"
+        "id": "zZKijDkcd_I-"
       },
       "execution_count": 1,
       "outputs": []
@@ -65,12 +65,12 @@
     {
       "cell_type": "code",
       "source": [
-        "dataset = pd.read_csv('CCP.csv')\n",
-        "X = dataset.iloc[:, :-1].values\n",
-        "y = dataset.iloc[:, -1].values"
+        "data_set = pd.read_csv('CCP.csv')\n",
+        "X = data_set.iloc[:, :-1].values\n",
+        "y = data_set.iloc[:, -1].values"
       ],
       "metadata": {
-        "id": "X9pi704ZXaHg"
+        "id": "hxZN9OS8eLCp"
       },
       "execution_count": 2,
       "outputs": []
@@ -78,7 +78,7 @@
     {
       "cell_type": "markdown",
       "metadata": {
-        "id": "8TSen4VpDBVV"
+        "id": "V9bZq2w39GwP"
       },
       "source": [
         "## Splitting the dataset into the Training & Test set"
@@ -91,7 +91,7 @@
         "X_train, X_test, y_train, y_test = train_test_split(X, y, test_size= 0.2, random_state= 0)"
       ],
       "metadata": {
-        "id": "5uppJ56kXyn7"
+        "id": "53QbANQ2eoQ4"
       },
       "execution_count": 3,
       "outputs": []
@@ -99,17 +99,17 @@
     {
       "cell_type": "markdown",
       "metadata": {
-        "id": "3ot8DaEpsxxb"
+        "id": "2vBbKI1BUilB"
       },
       "source": [
-        "## Decision Tree Regression model Training on the Training set"
+        "## Multiple Linear Regression model Training on the Training set"
       ]
     },
     {
       "cell_type": "code",
       "source": [
-        "from sklearn.tree import DecisionTreeRegressor\n",
-        "regressor = DecisionTreeRegressor(random_state= 42)\n",
+        "from sklearn.linear_model import LinearRegression\n",
+        "regressor = LinearRegression()\n",
         "regressor.fit(X_train, y_train)"
       ],
       "metadata": {
@@ -117,8 +117,8 @@
           "base_uri": "https://localhost:8080/",
           "height": 80
         },
-        "id": "XQBgvOa-ZJ4_",
-        "outputId": "9419e72a-49cc-41fa-f45d-e34e6d7f23e0"
+        "id": "OGgVyLt1fE1A",
+        "outputId": "298cd5e1-1472-490a-8416-a4eed600bcd4"
       },
       "execution_count": 4,
       "outputs": [
@@ -126,7 +126,7 @@
           "output_type": "execute_result",
           "data": {
             "text/plain": [
-              "DecisionTreeRegressor(random_state=42)"
+              "LinearRegression()"
             ],
             "text/html": [
               "<style>#sk-container-id-1 {\n",
@@ -544,7 +544,7 @@
               "  /* fitted */\n",
               "  background-color: var(--sklearn-color-fitted-level-3);\n",
               "}\n",
-              "</style><div id=\"sk-container-id-1\" class=\"sk-top-container\"><div class=\"sk-text-repr-fallback\"><pre>DecisionTreeRegressor(random_state=42)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class=\"sk-container\" hidden><div class=\"sk-item\"><div class=\"sk-estimator fitted sk-toggleable\"><input class=\"sk-toggleable__control sk-hidden--visually\" id=\"sk-estimator-id-1\" type=\"checkbox\" checked><label for=\"sk-estimator-id-1\" class=\"sk-toggleable__label fitted sk-toggleable__label-arrow\"><div><div>DecisionTreeRegressor</div></div><div><a class=\"sk-estimator-doc-link fitted\" rel=\"noreferrer\" target=\"_blank\" href=\"https://scikit-learn.org/1.6/modules/generated/sklearn.tree.DecisionTreeRegressor.html\">?<span>Documentation for DecisionTreeRegressor</span></a><span class=\"sk-estimator-doc-link fitted\">i<span>Fitted</span></span></div></label><div class=\"sk-toggleable__content fitted\"><pre>DecisionTreeRegressor(random_state=42)</pre></div> </div></div></div></div>"
+              "</style><div id=\"sk-container-id-1\" class=\"sk-top-container\"><div class=\"sk-text-repr-fallback\"><pre>LinearRegression()</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class=\"sk-container\" hidden><div class=\"sk-item\"><div class=\"sk-estimator fitted sk-toggleable\"><input class=\"sk-toggleable__control sk-hidden--visually\" id=\"sk-estimator-id-1\" type=\"checkbox\" checked><label for=\"sk-estimator-id-1\" class=\"sk-toggleable__label fitted sk-toggleable__label-arrow\"><div><div>LinearRegression</div></div><div><a class=\"sk-estimator-doc-link fitted\" rel=\"noreferrer\" target=\"_blank\" href=\"https://scikit-learn.org/1.6/modules/generated/sklearn.linear_model.LinearRegression.html\">?<span>Documentation for LinearRegression</span></a><span class=\"sk-estimator-doc-link fitted\">i<span>Fitted</span></span></div></label><div class=\"sk-toggleable__content fitted\"><pre>LinearRegression()</pre></div> </div></div></div></div>"
             ]
           },
           "metadata": {},
@@ -555,7 +555,7 @@
     {
       "cell_type": "markdown",
       "metadata": {
-        "id": "uziF7cmeU4tJ"
+        "id": "K6uEL0b5Utac"
       },
       "source": [
         "## Test set results Predictions"
@@ -572,34 +572,34 @@
         "colab": {
           "base_uri": "https://localhost:8080/"
         },
-        "id": "qUoTv8iWZZn8",
-        "outputId": "92395d03-40a0-46cf-85ff-ccfa37787669"
+        "id": "gtCUH5BnfWKi",
+        "outputId": "822e3cea-f552-400b-a898-9498304797ac"
       },
-      "execution_count": 6,
+      "execution_count": 5,
       "outputs": [
         {
           "output_type": "stream",
           "name": "stdout",
           "text": [
-            "[[429.06 431.23]\n",
-            " [459.59 460.01]\n",
-            " [460.06 461.14]\n",
+            "[[431.43 431.23]\n",
+            " [458.56 460.01]\n",
+            " [462.75 461.14]\n",
             " ...\n",
-            " [470.31 473.26]\n",
-            " [437.76 438.  ]\n",
-            " [462.55 463.28]]\n"
+            " [469.52 473.26]\n",
+            " [442.42 438.  ]\n",
+            " [461.88 463.28]]\n"
           ]
         }
       ]
     },
     {
       "cell_type": "markdown",
+      "metadata": {
+        "id": "RyRva69qUzBK"
+      },
       "source": [
         "## Model Performance Evaluation"
-      ],
-      "metadata": {
-        "id": "kz5I_1GPYhCM"
-      }
+      ]
     },
     {
       "cell_type": "code",
@@ -611,20 +611,20 @@
         "colab": {
           "base_uri": "https://localhost:8080/"
         },
-        "id": "N1O0E32KaNHo",
-        "outputId": "470bd173-6d5e-447c-a301-e8423ba5e380"
+        "id": "zcdlMKt5f52W",
+        "outputId": "5b03fae3-ee5f-4647-d0f0-b7284c2f7664"
       },
-      "execution_count": 8,
+      "execution_count": 6,
       "outputs": [
         {
           "output_type": "execute_result",
           "data": {
             "text/plain": [
-              "0.9203865971352851"
+              "0.9325315554761303"
             ]
           },
           "metadata": {},
-          "execution_count": 8
+          "execution_count": 6
         }
       ]
     }
